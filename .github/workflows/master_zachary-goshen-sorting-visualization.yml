@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'zachary-goshen-sorting-visualization'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1cdbf0de4e814792814e63a3a8b3b492 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_54e45b232774413ab5303aa8ec7ed709 }}
         package: .
