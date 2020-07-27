@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div id="topNav">
+		<div id="topNavLogo">SORTING ALGORITHM VISUALIZATION</div>
+		<button class="highlightOnHover topNavButton" onclick="generateValues()">Generate New Array</button>
+		<button class="topNavButton">
+			Animation Speed: <input id="framesPerAnimationInput" type="range" min=1 max=100 value=50 oninput="changeFramesPerAnimation()">
+		</button>
+		<button class="topNavButton">
+			Array Size: <input id="sizeInput" type="range" min=2 max=127 value=31 oninput="generateValues()">
+		</button>
+		<button id="pauseButton" class="highlightOnHover topNavButton" onclick="pauseOrResume()">Pause</button>
+	</div>
+	<div id="sideNav">
+		<button class="sortButton" onclick="startAlgorithm(0)">Selection Sort</button>
+		<button class="sortButton" onclick="startAlgorithm(1)">Insertion Sort</button>
+		<button class="sortButton" onclick="startAlgorithm(2)">Bubble Sort</button>
+		<button class="sortButton" onclick="startAlgorithm(3)">Merge Sort</button>
+		<button class="sortButton" onclick="startAlgorithm(4)">Quick Sort</button>
+		<button class="sortButton" onclick="startAlgorithm(5)">Heap Sort (Array)</button>
+		<button class="sortButton" onclick="startAlgorithm(6)">Heap Sort (Tree)</button>
+		<button class="sortButton" onclick="startAlgorithm(7)">Counting Sort</button>
+		<button class="sortButton" onclick="startAlgorithm(8)">Radix Sort</button>
+	</div>
+	<div id="sortingDiv"></div>
+	<div id="countDiv">
+		<div class="countDivRow"></div>
+		<div class="countDivRow"></div>
+	</div>
+</body>
+</html>
+
+<script src="./selectionSort.js"></script>
+<script src="./insertionSort.js"></script>
+<script src="./bubbleSort.js"></script>
+<script src="./mergeSort.js"></script>
+<script src="./quickSort.js"></script>
+<script src="./heapSortArray.js"></script>
+<script src="./heapSortTree.js"></script>
+<script src="./countingSort.js"></script>
+<script src="./animations.js"></script>
+<script src="./index.js"></script>

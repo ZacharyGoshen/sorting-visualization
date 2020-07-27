@@ -1,0 +1,94 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	width: 100%;
+} 
+body {
+	margin: 0px;
+	min-height: 100%;
+	width: 100%;
+}
+.countBox {
+	position: absolute;
+}
+.countDivRow {
+	position: relative;
+}
+.countIndex {
+	color: white;
+	height: 50%;
+	text-align: center;
+	width: 100%;
+}
+.countValue {
+	background-color: #1a1a1a;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	color: white;
+	text-align: center;
+}
+.highlightOnHover:hover {
+	background-color: #4CAF50;
+}
+.sideNavDiv {
+	height: 50px;
+	width: 100%;
+}
+.sortBar {
+	background-color: #1a1a1a;
+	color: white;
+	line-height: 50px;
+	position: absolute;
+	text-align: center;
+}
+.sortButton {
+	all: unset;
+	color: white;
+	display: block;
+	height: 50px;
+	text-align: center;
+	width: 100%;
+}
+.sortButton:hover {
+	background-color: #4CAF50;
+}
+.topNavButton {
+	all: unset;
+	color: white;
+	height: 100%;
+	line-height: 50px;
+	padding: 0px 10px;
+}
+#countDiv {
+	position: relative;
+}
+#pauseButton {
+	visibility: hidden;
+}
+#sideNav {
+	background-color: #1a1a1a;
+    color: white;
+	height: 100%;
+	left: 0;
+	overflow-x: hidden;
+	position: fixed;
+	width: 150px;
+}
+#sortingDiv {
+	position: relative;
+}
+#topNav {
+	background-color: #404040;
+    color: white;
+	height: 50px;
+	width: 100%;
+	overflow-x: hidden;
+}
+#topNavLogo {
+	all: unset;
+	color: #4CAF50;
+	height: 100%;
+	line-height: 50px;
+	padding: 0px 10px;
+}
