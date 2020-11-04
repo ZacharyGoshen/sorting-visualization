@@ -268,7 +268,7 @@ function sinkRoot2(i, n, buildingMaxHeap) {
 	var right = (2 * i) + 2; // Right child of root
 
 	if (buildingMaxHeap == false) {
-		funQueue.push(wrapFunction(colorBar, this, [i, "grey"]));
+		funQueue.push(wrapFunction(colorBar, this, [i, barHighlightColor]));
 	}
 
 	if ((left < n) && (values[left] > values[largest])) { // Left value is larger than root

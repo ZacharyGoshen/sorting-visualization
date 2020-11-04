@@ -120,53 +120,23 @@ function countingSort(radix) {
 
 // Create a display for the counts of all possible values in the range from 0 to 99
 function generateCountDisplay(exponent) {
-	var countDivRow1 = document.getElementsByClassName("countDivRow")[0];
-	var countDivRow2 = document.getElementsByClassName("countDivRow")[1];
+	var countDiv = document.getElementById("countDiv");
 
 	var leftHTML = "<div class=\"countBox\"><div class=\"countIndex\">";
 	var rightHTML = "</div><div class=\"countValue\">0</div></div>";
 
 	if (exponent == -1) { // If performing normal counting sort
-		for (var i = 0; i < 50; i++) { // Generate two rows of 50 count boxes
-			countDivRow1.innerHTML += (leftHTML + i + rightHTML)
-			countDivRow2.innerHTML += (leftHTML + (i + 50) + rightHTML);
+		for (var i = 0; i < 100; i++) { // Generate row of count boxes
+			countDiv.innerHTML += (leftHTML + i + rightHTML);
 		}
-
-		for (var i = 0; i < 50; i++) { // Set the horizontal position of all the count boxes
-			var countBox1 = document.getElementsByClassName("countBox")[i]
-			countBox1.style.left = (i * (1 + countBoxWidth)) + "px";
-			countBox1.style.width = countBoxWidth + "px";
-			countBox1.style.height = (2 * countBoxWidth) + "px";
-			document.getElementsByClassName("countIndex")[i].style.lineHeight = countBoxWidth + "px";
-
-			var countBox2 = document.getElementsByClassName("countBox")[i + 50]
-			countBox2.style.left = (i * (1 + countBoxWidth)) + "px";
-			countBox2.style.width = countBoxWidth + "px";
-			countBox2.style.height = (2 * countBoxWidth) + "px";
-			document.getElementsByClassName("countIndex")[i + 50].style.lineHeight = countBoxWidth + "px";
-
-		}
-
-		countBoxesPerRow = 50;
-		countBoxRows = 2;
 	} else { // If performing radix sort
 		for (var i = 0; i < 10; i++) { // Generate a count box for each digit (to some power of 10)
-			countDivRow1.innerHTML += (leftHTML + (i * (Math.pow(10, exponent))) + rightHTML);
-		}
-
-		for (var i = 0; i < 10; i++) { // Set the horizontal position of all the count boxes
-			var countBox = document.getElementsByClassName("countBox")[i]
-			countBox.style.left = (i * (1 + countBoxWidth)) + "px";
-			countBox.style.width = countBoxWidth + "px";
-			countBox.style.height = (2 * countBoxWidth) + "px";
-			document.getElementsByClassName("countIndex")[i].style.lineHeight = countBoxWidth + "px";
+			countDiv.innerHTML += (leftHTML + (i * (Math.pow(10, exponent))) + rightHTML);
 		}
 
 		countBoxesPerRow = 10;
 		countBoxRows = 1;
 	}
-
-	document.getElementById("countDiv").style.backgroundColor = "#404040";
 
 	resizeDisplay();
 
@@ -288,8 +258,6 @@ function resetBarOrder(swapOrder) {
 
 // Remove the count box display
 function clearCountDisplay() {
-	document.getElementById("countDiv").style.backgroundColor = "white";
-	document.getElementsByClassName("countDivRow")[0].innerHTML = "";
-	document.getElementsByClassName("countDivRow")[1].innerHTML = "";
+	document.getElementById("countDiv").innerHTML = "";
 	playAnimations(funQueue);
 }

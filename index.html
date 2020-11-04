@@ -6,32 +6,36 @@
 </head>
 <body>
 	<div id="topNav">
-		<div id="topNavLogo">SORTING ALGORITHM VISUALIZATION</div>
-		<button class="highlightOnHover topNavButton" onclick="generateValues()">Generate New Array</button>
+		<div id="topNavLogo">Sorting Algorithm Visualizer</div>
+		<div id="newArrayButton" onclick="generateValues()">Generate New Array</div>
 		<button class="topNavButton">
-			Animation Speed: <input id="framesPerAnimationInput" type="range" min=1 max=100 value=50 oninput="changeFramesPerAnimation()">
+			<div>Animation Speed: </div>
+			<input id="framesPerAnimationInput" type="range" min=1 max=100 value=50 oninput="changeFramesPerAnimation()">
 		</button>
 		<button class="topNavButton">
-			Array Size: <input id="sizeInput" type="range" min=2 max=127 value=31 oninput="generateValues()">
+			<div>Array Size: </div>
+			<input id="sizeInput" type="range" min=2 max=127 value=31 oninput="generateValues()">
 		</button>
-		<button id="pauseButton" class="highlightOnHover topNavButton" onclick="pauseOrResume()">Pause</button>
+		<div id="pauseButton" onclick="pauseOrResume()">Pause</div>
 	</div>
-	<div id="sideNav">
-		<button class="sortButton" onclick="startAlgorithm(0)">Selection Sort</button>
-		<button class="sortButton" onclick="startAlgorithm(1)">Insertion Sort</button>
-		<button class="sortButton" onclick="startAlgorithm(2)">Bubble Sort</button>
-		<button class="sortButton" onclick="startAlgorithm(3)">Merge Sort</button>
-		<button class="sortButton" onclick="startAlgorithm(4)">Quick Sort</button>
-		<button class="sortButton" onclick="startAlgorithm(5)">Heap Sort (Array)</button>
-		<button class="sortButton" onclick="startAlgorithm(6)">Heap Sort (Tree)</button>
-		<button class="sortButton" onclick="startAlgorithm(7)">Counting Sort</button>
-		<button class="sortButton" onclick="startAlgorithm(8)">Radix Sort</button>
+	<div id="bottomContainer">
+		<div id="sideNav">
+			<button class="sortButton" onclick="startAlgorithm(0)">Selection Sort</button>
+			<button class="sortButton" onclick="startAlgorithm(1)">Insertion Sort</button>
+			<button class="sortButton" onclick="startAlgorithm(2)">Bubble Sort</button>
+			<button class="sortButton" onclick="startAlgorithm(3)">Merge Sort</button>
+			<button class="sortButton" onclick="startAlgorithm(4)">Quick Sort</button>
+			<button class="sortButton" onclick="startAlgorithm(5)">Heap Sort (Array)</button>
+			<button class="sortButton" onclick="startAlgorithm(6)">Heap Sort (Tree)</button>
+			<button class="sortButton" onclick="startAlgorithm(7)">Counting Sort</button>
+			<button class="sortButton" onclick="startAlgorithm(8)">Radix Sort</button>
+		</div>
+		<div id="bottomRightContainer">
+			<div id="sortingDiv"></div>
+			<div id="countDiv"></div>
+		</div>
 	</div>
-	<div id="sortingDiv"></div>
-	<div id="countDiv">
-		<div class="countDivRow"></div>
-		<div class="countDivRow"></div>
-	</div>
+</div>
 </body>
 </html>
 

@@ -4,39 +4,43 @@ html, body {
 	width: 100%;
 } 
 body {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: 100%;
 	margin: 0px;
-	min-height: 100%;
 	width: 100%;
 }
 .countBox {
-	position: absolute;
-}
-.countDivRow {
-	position: relative;
+	padding: 10px 0px;
 }
 .countIndex {
 	color: white;
-	height: 50%;
+	padding: 5px;
 	text-align: center;
-	width: 100%;
 }
 .countValue {
-	background-color: #1a1a1a;
-	border-color: white;
-	border-style: solid;
-	border-width: 1px;
+	align-items: center;
 	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	max-height: 30px;
+	max-width: 30px;
+	min-height: 30px;
+	min-width: 30px;
 	text-align: center;
 }
 .highlightOnHover:hover {
-	background-color: #4CAF50;
+	background-color: #007cc7;
 }
 .sideNavDiv {
 	height: 50px;
 	width: 100%;
 }
 .sortBar {
-	background-color: #1a1a1a;
+	background-color: #007cc7;
 	color: white;
 	line-height: 50px;
 	position: absolute;
@@ -51,44 +55,79 @@ body {
 	width: 100%;
 }
 .sortButton:hover {
-	background-color: #4CAF50;
+	background-color: #203647;
+	cursor: pointer;
 }
 .topNavButton {
 	all: unset;
+	align-items: center;
 	color: white;
-	height: 100%;
-	line-height: 50px;
-	padding: 0px 10px;
+	display: flex;
+	flex-direction: row;
+	margin-right: 20px;
+}
+.topNavButton div {
+	margin-right: 10px;
+}
+#bottomContainer {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	max-width: 100%;
+}
+#bottomRightContainer {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 #countDiv {
-	position: relative;
+	background-color: #1a1a1a;
+	border-top: solid 2px #203647;
+	display: flex;
+	flex-direction: row;
+	overflow-x: auto;
+}
+#newArrayButton {
+	color: white;
+	margin-right: 20px;
+}
+#newArrayButton:hover {
+	color: #4da8da;
+	cursor: pointer;
 }
 #pauseButton {
+	color: white;
 	visibility: hidden;
+}
+#pauseButton:hover {
+	color: #4da8da;
+	cursor: pointer;
 }
 #sideNav {
 	background-color: #1a1a1a;
+	border-right: solid 2px #203647;
     color: white;
 	height: 100%;
 	left: 0;
-	overflow-x: hidden;
-	position: fixed;
-	width: 150px;
+	min-width: 150px;
 }
 #sortingDiv {
+	flex-grow: 1;
 	position: relative;
+	width: 100%;
 }
 #topNav {
-	background-color: #404040;
+	align-items: center;
+	background-color: #1a1a1d;
+	border-bottom: solid 2px #203647;
     color: white;
-	height: 50px;
-	width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
 	overflow-x: hidden;
 }
 #topNavLogo {
-	all: unset;
-	color: #4CAF50;
-	height: 100%;
-	line-height: 50px;
-	padding: 0px 10px;
+	color: #4da8da;
+	font-size: 1.2em;
+	margin-right: 20px;
 }

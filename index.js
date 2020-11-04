@@ -9,9 +9,9 @@ var maxHeight = Math.floor(heightScale * (maxValue + 50));
 var framesPerAnimation = 50;
 
 // Color schemes
-var barDefaultColor = "#1a1a1a";
-var barHighlightColor = "#404040"
-var barSortedColor = "#4CAF50";
+var barDefaultColor = "#007cc7";
+var barHighlightColor = "#203647"
+var barSortedColor = "#4da8da";
 
 var values = [];
 var barWidth;
@@ -24,7 +24,7 @@ var countBoxHeight;
 var countDivRowHeight;
 var countBoxRows;
 var countBoxesPerRow;
-var countBoxHighlightColor = "#4CAF50";
+var countBoxHighlightColor = "#203647";
 var countBoxDefaultColor = "#1a1a1a";
 
 // Top/side nav parameters
@@ -118,22 +118,23 @@ function resizeDisplay() {
 	var displayHeight = windowHeight - topNavHeight; // Window height minus top nav height
 
 	displayDiv.style.width = displayWidth + "px";
-	displayDiv.style.height = displayHeight + "px";
-	displayDiv.style.left = sideNavWidth + displayWindowPadding + leftOffset + "px";
+	// displayDiv.style.height = displayHeight + "px";
+	displayDiv.style.left = displayWindowPadding + leftOffset + "px";
 
 	var countDiv = document.getElementById("countDiv");
-	var countDivRow1 = document.getElementsByClassName("countDivRow")[0];
-	var countDivRow2 = document.getElementsByClassName("countDivRow")[1];
+	countDiv.style.width = windowWidth - sideNavWidth + "px";
+	// var countDivRow1 = document.getElementsByClassName("countDivRow")[0];
+	// var countDivRow2 = document.getElementsByClassName("countDivRow")[1];
 
-	countDivRowHeight = countBoxRows * countBoxWidth;
-	countDiv.style.left = sideNavWidth + "px";
-	countDiv.style.top = - (2 * countDivRowHeight) + "px";
-	countDivRow1.style.height = countDivRowHeight + "px";
-	countDivRow2.style.height = countDivRowHeight + "px";
+	// countDivRowHeight = countBoxRows * countBoxWidth;
+	// countDiv.style.left = sideNavWidth + "px";
+	// countDiv.style.top = - (2 * countDivRowHeight) + "px";
+	// countDivRow1.style.height = countDivRowHeight + "px";
+	// countDivRow2.style.height = countDivRowHeight + "px";
 
-	leftOffset = (windowWidth - sideNavWidth - ((countBoxWidth + 1) * countBoxesPerRow)) / 2;
-	countDivRow1.style.left = leftOffset + "px";
-	countDivRow2.style.left = leftOffset + "px";
+	// leftOffset = (windowWidth - sideNavWidth - ((countBoxWidth + 1) * countBoxesPerRow)) / 2;
+	// countDivRow1.style.left = leftOffset + "px";
+	// countDivRow2.style.left = leftOffset + "px";
 }
 
 // Pause or resume the animation

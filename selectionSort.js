@@ -23,7 +23,7 @@ function selSortAnimation(index1, index2, lowestValues) {
 
 	var prevLowest = -1;
 	var curLowest = index1;
-	for (var i = index1; i <= index2; i++) {
+	for (var i = index1; i < values.length; i++) {
 		var removePrevHighlight = false;
 		var isCurLowestValue = false;
 		if ((i != index1) && ((i - 1) != curLowest)) { // Check if prev highlight should be removed
@@ -50,6 +50,10 @@ function selSortAnimation(index1, index2, lowestValues) {
 		funQueue.push(wrapFunction(moveMultDivs, this, [[index1, index2], [-1, -1], [0, 0]]));
 	}
 
+	if (index2 != values.length - 1) {
+		funQueue.push(wrapFunction(colorBar, this, [values.length - 1, barDefaultColor]));
+	}
+
 	// Color the sorted bar and reorder the divs so they remain ordered by horizontal position
 	funQueue.push(wrapFunction(swapValues, this, [index1, index2]));
 	funQueue.push(wrapFunction(colorBar, this, [index1, barSortedColor]));
@@ -66,7 +70,7 @@ function highlightBar(i, removePrevHighlight, isCurLowestValue, prevLowest) {
 			curFrame++;
 		} else {
 			if (isCurLowestValue) {
-				document.getElementsByClassName("sortBar")[i].style.backgroundColor = "red";
+				document.getElementsByClassName("sortBar")[i].style.backgroundColor = barHighlightColor;
 				if (prevLowest != -1) {
 					document.getElementsByClassName("sortBar")[prevLowest].style.backgroundColor = barDefaultColor;
 				}
